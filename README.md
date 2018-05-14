@@ -107,3 +107,44 @@ y = wx + b; b只关乎截距
 
 
 
+## ML Lecture 3-1: Gradient Descent
+
+### Adagrad
+
+动态调整LR
+
+整体上是LR是逐渐减小的
+
+
+
+## ML Lecture 21-2: Recurrent Neural Network
+
+LSTM一个cell:
+
+<img src="./pic/LSTM-CELL.png" width="80%">
+
+LSTM结构：
+
+<img src="./pic/LSTM.png" width="80%"> 
+
+当前时刻(t)的输入 $x^t$ 与四个矩阵相乘得到四个不同的向量：
+
+- $z^f$ : to forget gate 
+- $z^i$ : to input gate
+- $z$ : to input
+- $z^o$ : to output gate
+
+门的打开还是关闭是网络训练的结果。这里有个体会：
+
+==那些不好确定的参数，就让机器来确定吧。人搞不定的东西，就交给机器去搞定吧。==
+
+所以t时刻的输入其实是和下面三个因素有关系的，因此RNN具有记忆的功能：
+
+- 上一个时刻的输出
+- 记忆
+- 这一时刻的输入
+
+因此我们通常说的RNN通常就是指的LSTM网络
+
+
+
