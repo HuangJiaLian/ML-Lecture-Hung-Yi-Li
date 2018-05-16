@@ -119,6 +119,14 @@ y = wx + b; b只关乎截距
 
 ## ML Lecture 21-2: Recurrent Neural Network
 
+RNN的一个特点:
+
+- error surface( Total loss) is rough
+
+出现这个情况的原因是同样的东西在Tranzation的时候重复使用，就像是蝴蝶效应。
+
+如何解决这个问题呢: LSTM可以使得Error surface 不那么崎岖，从而解决Gradient Vanishing 的问题(Not gradient explode)
+
 LSTM一个cell:
 
 <img src="./pic/LSTM-CELL.png" width="80%">
@@ -147,4 +155,16 @@ LSTM结构：
 因此我们通常说的RNN通常就是指的LSTM网络
 
 
+
+RNN可以解决一些什么问题：
+
+- Many to one 
+  - 判断一些语句是积极还是消极的
+  - 提取论文的关键词
+- Many to many (long to short)
+  - 语音辨识
+- Many to many (No limitation)
+  - 机器翻译
+- Sequece to sequence 
+  - 台语到普通话 直接转化 不用语音识别
 
