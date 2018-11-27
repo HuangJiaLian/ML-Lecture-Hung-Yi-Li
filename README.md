@@ -115,7 +115,55 @@ y = wx + b; b只关乎截距
 
 整体上是LR是逐渐减小的
 
+## Tuning Hyperparameters
 
+#### Grid Search v.s. Random Search
+
+==Assumption: top K results are good enough==
+
+<img src='./pic/hyperparameters.png' width='50%'>
+
+#### Model-Based Hyperoarameters Optimization 
+
+#### Reinforcement Learning(Learn to learn)
+
+SWISH: 用计算机学习应该使用什么样子的激活函数。Cool
+
+## Batch Normalization
+
+[视频](https://www.youtube.com/watch?v=BZh1ltr5Rkg)
+
+#### Feature Scaling: 
+
+加速训练过程:
+
+针对输入做Feature Scaling:
+
+<img src='./pic/feature_scaling.png' width='50%'>
+
+事实证明是有效的。那么为什么我们不再每层的输出做Feature Scaling呢？
+
+<img src='./pic/batch_nor.png' width='50%'>
+
+但中间层的输出和输入不一样，由于网络中的参数在不停发生变化。方差和均值是不容易求得的，因此就要使用新的方法，于是提出了Batch Normalization 的方法
+
+
+
+Testing的时候有点方法
+
+
+
+Batch Normalization的优势:
+
+<img src='./pic/b_nor_binefit.png' width='60%'>	
+
+
+
+训练过程加速的方法:
+
+- Mini Batch
+- Dropout
+- Batch Normalization
 
 ## ML Lecture 21-2: Recurrent Neural Network
 
@@ -168,3 +216,23 @@ RNN可以解决一些什么问题：
 - Sequece to sequence 
   - 台语到普通话 直接转化 不用语音识别
 
+
+
+
+
+##  ML Lecture 19: Transfer Learning
+
+处理的问题:
+
+Data **not directly related** to the task considered. 
+
+- Example in real life (研究生和漫画家) Bakuman 
+
+1. Model Fine Tuning
+2. Layer Transfer
+   -  哪些Layer应该被copy?
+     - Speech: 通常copy the last few layers 
+     - Image: usually copy the first few layers 
+3. Multitask Learning 
+   - Multilingual Speech Recognition 
+   - 
